@@ -33,6 +33,54 @@
     <link rel="stylesheet" href="css/hover_effect.css">
     <style type="text/css">
 
+
+      #sbutton {
+  display: inline-block;
+  background-color: #22a8df;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#sbutton::after {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#sbutton:hover {
+  cursor: pointer;
+  background-color:#ff7902;
+}
+#sbutton:active {
+  background-color:#22a8df;
+}
+#sbutton.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+@media (min-width: 500px) {
+  
+  #sbutton {
+    margin: 30px;
+  }
+}
+
+
+
   .btn-change4{
     width: 65px;
     height: 40px;
@@ -300,6 +348,7 @@
 </head>
 
 <body>
+
     <!-- Preloader
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="lds-ellipsis">
@@ -400,7 +449,7 @@
     </a>-->
 </div>
 
-
+     <a id="sbutton"><i class="fas fa-angle-up mt-1" style="color: #fff;font-size: 130%;"></i></a>
  
          <!-- Slideshow -->
   <div class="wrapper home_slides" id="js-wrapper">
@@ -759,7 +808,7 @@
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/Magis-Let-105994257927054" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="facebook" href="https://www.facebook.com/Magis-Let-105994257927054" target="_blank"><i class="fas fa-facebook"></i></a></li>
               <li><a class="dribbble" href="https://www.instagram.com/magis_let" target="_blank"><i class="fab fa-instagram"></i></a></li>
               <li><a class="twitter" href="https://twitter.com/magis_let" target="_blank"><i class="fab fa-twitter"></i></a></li>
              
@@ -827,6 +876,23 @@ $(document).ready(function(){
     });
 
 });
+
+var btn = $('#sbutton');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0},'300');
+});
+
+
     </script> 
 
 
