@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+
+
+
+
+    <title>Magislet.com</title>
+    <!-- Favicon -->
+    <link rel="icon"type="image/png" href="img/logo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/hover_effect.css">
+    <style type="text/css">
+      .heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3D5AFE
+}
+
+.line1 {
+    color: #000;
+    font-size: 12px
+}
+
+.line2 {
+    color: #000;
+    font-size: 12px
+}
+
+.line3 {
+    color: #000;
+    font-size: 12px
+}
+
+.cards {
+    transition: all 0.2s ease;
+    cursor: pointer
+}
+
+.cards:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1)
+}
+        .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background: #42b078;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 50px 20px;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 20px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-10px,0,0);
+  transform: translate3d(-10px,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hovereffect:hover img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+   -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+}
+
+.hovereffect h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: '';
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+}
+
+.hovereffect:hover h2:after {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.spec_button{
+  margin-top: 1%;
+  border: 1px solid #ff7902;
+  color: #ff7902;
+  border-radius: 25px;
+
+}
+
+
+.carousel .carousel-inner img {
+    display:block;
+    object-fit: cover;
+}
+
+ @-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel-inner .item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
+}
+.typing{
+  font-family: courier;
+  font-weight: bold;
+  font-size: 170%;
+  color:#000;
+  }
+ .order_small a{
+    color:#fff;
+    border:1px solid #fff;
+    padding:11px;
+    font-weight:bold;
+   }
+   .order_small a:hover{
+    color:#000;
+    border:none;
+    padding:11px;
+    font-weight:bold;
+    background:#fff;
+   }
+
+
+    
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.zoom_section {
+  height: 100%;
+  width: calc(100% / 5);
+  float: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zoom_section:nth-child(1) {
+  background: #262626;
+}
+.zoom_section:nth-child(2) {
+  background:rgba(70,70,255,.6);
+}
+.zoom_section:nth-child(3) {
+  background: #f9690e;
+}
+.sections {
+  width: 500%;
+  height: 100%;
+}
+.sectionTitle {
+  font-size: 30px;
+  color: #fff;
+}
+
+
+
+ @media screen and (min-width: 767px) {
+             .image-responsive{
+             height:65%;
+             width:80%;
+             }
+            
+.pixel-main-menu .classy-navbar  .order_small a{
+          display: none;
+        }
+      }
+
+       @-webkit-keyframes slide-bg {
+  0% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+@keyframes slide-bg {
+  0% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3); }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Preloader
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+
+         <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="pixel-main-menu" id="sticker">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="pixelNav">
+
+                        <!-- Nav brand -->
+                        <div class="nav-brand">
+                        <a href="index.html" class=""><img src="img/logo.gif" width="50" height="50" alt="Our Logo"></a>
+                       
+                       </div>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"></span>
+
+                        </div>
+                          <span class="order_small"><a href="#" target="_blank" class="book_now" style="text-align:right;">Order Now</a></span>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                            
+                                    <li><a href="#">Back</a></li>
+                                     <li><a href="#"> </a></li>
+                                </ul>
+
+                            
+                                   <div class="order">
+                              <a href="#" target="_blank" class="book_now" >Order Now</a></div>
+                                </div>
+                          
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+      
+       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+           <div class="single-slide">
+                <!-- Background Image-->
+                <div class="slide-bg-img bg-img" style="background-image: url('img/12.jpg')"> </div>
+                <!-- Welcome Text -->
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-lg-9">
+                            <div class="welcome-text">
+                               <h2 data-animation="fadeInUp" data-delay="300ms" >  <span style="font-family:courier;">IMPANO</span><br><span style="font-family:courier;">BULB</span></h2>
+                                <!--<h4 data-animation="fadeInUp" data-delay="500ms">short<span>description</span></h4> -->
+                               <!-- <a href="#" class="btn pixel-btn mt-50" data-animation="fadeInUp" data-delay="700ms">View Project</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+ 
+       
+      
+    </div>
+    <!--
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>-->
+</div>
+
+
+ 
+         <!-- Slideshow -->
+  <div class="wrapper home_slides" id="js-wrapper">
+  <div class="sections" id="js-slideContainer">
+    <section class="zoom_section">
+      <span class="sectionTitle" id="title1">Section One</span>
+    </section>
+    <section class="zoom_section">
+      <span class="sectionTitle" id="title2">Section Two</span>
+    </section>
+   
+    <section class="zoom_section">
+      <span class="sectionTitle" id="title3">Section 3</span>
+    </section>
+  </div>
+</div>
+</div> 
+      
+
+      <section class="about_what" style="background: #ECEDF0;padding-top: 10px;">
+    <div class="pixel-portfolio-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center wow fadeInUp">
+                        <h2 style="font-family:courier;"><i class="far fa-lightbulb"></i> IMPANO BULB</h2>
+
+                       <!-- <img src="img/logo.gif" alt="" width="50" height="50"><br><br>
+                         <button class="btn active text-center" data-filter="*" style="font-family:courier;">About Bulb</button> -->
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+        <!-- Portfolio Menu -->
+        <div class="container">
+        <div class="pixel-projects-menu wow fadeInUp" data-wow-delay="200ms">
+            <div class="text-center portfolio-menu">
+               <!-- h -->
+            </div>
+        </div>
+        </div>
+        <div class="pixel-portfolio">
+
+            <!-- Single gallery Item -->
+            <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <p class="Heading aboutt" style="font-size: 120%;"><b><i class="fas fa-lightbulb"></i> IMPANO BULB</b></p>
+                    <p class="text-justify aboutt" style="color:#000;font-size: 130%;" >Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée</p>
+                </div>
+          
+                <div class="col-md-8">
+                    <!-- <div class="container mt-40"> -->
+            <h3 class="text-center"> </h3>
+            <div class="row mt-30">
+                <div class="">
+                    <div class="box7">
+                        <img src="img/12.jpg" alt="">
+                        <div class="box-content" style="display: none;">
+                            <h3 class="title">IMPANO BULB</h3><br><br>
+           <span class="post"> <a href="order.php" target="_blank" class="book_now" style="color:#fff;border:1px solid #1E90FF; padding:11px; font-weight:bold;background:#1E90FF;font-family:courier;" >Order Now</a></span>
+                      
+                        </div>
+                    </div>
+                </div>
+               </div>
+                </div>
+                </div>
+              </div>
+                 </div><br><br>
+             </section>
+
+
+
+            <section class="about_why" style="padding-bottom: 10px;background: #ECEDF0;">
+             <div class="container" >
+          <div class="row align-items-center typingh">
+
+            <div class="col-sm-7">
+               <h3 class="text-center"> </h3>
+            <div class="row mt-30">
+                <div class="">
+                    <div class="box">
+                        <img src="img/12.jpg" alt="">
+                        <div class="box-content" style="display: none;">
+                            <h3 class="title">IMPANO BULB</h3><br><br>
+           <span class="post"> <a href="order.php" target="_blank" class="book_now" style="color:#fff;border:1px solid #1E90FF; padding:11px; font-weight:bold;background:#1E90FF;font-family:courier;" >Order Now</a></span>
+                      
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+      
+             <div class="col-sm-5">
+              <h4 class="Heading"><i class="far fa-question-circle" style="font-size: 190%;color: #1E90FF;"></i> WHY TO CHOOSE IMPANO</h4>
+              <p class="text-justify"><span class="typing text-center" style="text-align: center;font-size: 240%;"></span></p>
+          </div>
+
+          </div>
+        </div><br>
+        </section>
+        <!-- video 
+
+         <h3 class="text-center" ><img src="img/shine.png" style="width: 8%;">LET THERE BE SHINE WITH<i class="fas fa-lightbulb" style="font-size: 60%;color:  #ff7902;"></i> IMPANO </h3>
+         <div class="intro">
+        <h1> </h1>
+
+      <video src="G (2).mp4"></video>
+    </div>
+     <section class="sectionn">
+     
+    </section> -->
+      
+   <section class="attract">
+     <div class="container-fluid">
+       <div class="Heading">
+         <h3 class="text-center" ><img src="img/shine.png" style="width:6.5%;">LET THERE BE SHINE WITH <i class="fas fa-lightbulb" style="font-size: 60%;color:  #ff7902;"></i> IMPANO </h3>
+        <div class="ilimage">
+        <h1> </h1>
+        <video class="ml-1" width="320" height="240" loop autoplay muted>
+       <source src="h.mp4" type="video/mp4">
+         <source src="movie.ogg" type="video/ogg">
+       </video>
+    </div>
+     </section><br>
+        
+      
+      <section class="attract">
+     <div class="container-fluid">
+       <div class="Heading">
+         <h3 class="text-center" ><img src="img/afro.png" style="width:6.5%;">PROMOTE AFRO CULTURE WITH <i class="fas fa-lightbulb" style="font-size: 60%;color:  #ff7902;"></i> IMPANO </h3>
+        <div class="ilimage">
+        <h1> </h1>
+        <video class="ml-1" width="320" height="240" loop autoplay muted>
+       <source src="h.mp4" type="video/mp4">
+         <source src="movie.ogg" type="video/ogg">
+       </video>
+    </div>
+     </section><br>
+        
+
+
+        
+
+       <section class="specifications" style="padding-top: 15px;background: #ECEDF0;">
+       <section class="pixel-service-area">
+        <div class="container ser">
+           <h3 class="text-center" ><!--<img src="img/spec.png" style="width:4.5%;"> --><i class="fas fa-lightbulb" style="font-size:100%;color:  #ff7902;"></i> IMPANO SPECIFICATIONS</h3><br>
+            <div class="row">
+               
+                <div class="col-12 col-md-6 col-lg-3 1">
+                    <div class="single-service-area text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="spec_icon"><i class="far fa-lightbulb" style="font-size: 280%;color: #ff7902;"></i></div>
+                        <h5 >functionality</h5>
+                        <p >Description</p>
+                      
+                    </div>
+                </div>
+
+               
+                <div class="col-12 col-md-6 col-lg-3 2">
+                    <div class="single-service-area text-center mb-100 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="spec_icon"><i class="far fa-lightbulb" style="font-size: 280%;"></i></div>
+                        <h5 >functionality</h5>
+                        <p >Description</p>
+                      
+                    </div>
+                </div>
+
+               
+                <div class="col-12 col-md-6 col-lg-3 3">
+                    <div class="single-service-area text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                         <div class="spec_icon"><i class="far fa-lightbulb" style="font-size: 280%;color: #22a8df;"></i></div>
+                        <h5 >functionality</h5>
+                        <p >Description</p>
+                       
+                    </div>
+                </div>
+
+                 
+                <div class="col-12 col-md-6 col-lg-3 4">
+                    <div class="single-service-area text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                         <div class="spec_icon"><i class="far fa-lightbulb" style="font-size: 280%;"></i></div>
+                        <h5 >functionality</h5>
+                        <p >Description</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+       <section class="customizable" style="padding-bottom:20px;background: #ECEDF0;">
+         <div class="main text-center mt-5">
+     <h3 class="text-center custom_head" ><img src="img/buy.png" style="width:6.5%;">GET <i class="fas fa-lightbulb" style="font-size: 60%;color:  #ff7902;"></i> IMPANO BULB NOW </h3>
+</div>
+<div class="container justify-content-center">
+    <div class="row mb-30">
+        <div class="col-md-4 border-right">
+            <div class="cards">
+                <div class="first bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%" />
+                    <h5>VERSION</h5>
+                    <p class="line1">cost</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 border-right">
+            <div class="cards">
+                <div class=" second bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%"/>
+                    <h5>VERSION</h5>
+                    <p class="line2">cost</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cards">
+                <div class=" third bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%"/>
+                    <h5>VERSION</h5>
+                    <p class="line3">cost</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+         <div class="row">
+        <div class="col-md-4 border-right">
+            <div class="cards">
+                <div class="first bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%"/>
+                    <h5>VERSION</h5>
+                    <p class="line1">cost</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 border-right">
+            <div class="cards">
+                <div class=" second bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%"/>
+                    <h5>VERSION</h5>
+                    <p class="line2">cost</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cards">
+                <div class=" third bg-white p-4 text-center"> <img src="img/buy.png" style="width:35%"/>
+                    <h5>VERSION</h5>
+                    <p class="line3">cost</p>
+                </div>
+            </div>
+        </div>
+    </div>
+       </section>
+
+
+
+
+    </section><hr>
+    </section>
+     <!-- recomended for you -->
+         <section class="recomendations" style="padding-top: 1.7%;">
+         <div class="container">   
+           <p class="Heading spec_button text-center" style="font-family: courier;" ><b>Recomended for you</b></p>
+         <div class="row" >  
+              <div class="col-md-3 col-sm-6">
+                    <!-- <div class="container mt-40"> -->
+            <div class="row mt-30">
+                    <div class="box15">
+                        <img src="img/12.jpg" alt="" style="border-right:4px solid #fff;">
+                        <div class="box-content">
+                            <h3 class="title">OTHER PRODUCT</h3><br><br>
+                            <ul class="icon">
+                               <li><a href="#" class="btn btn-primary">VISIT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            <div class="col-md-3 col-sm-6" >
+                    <!-- <div class="container mt-40"> -->
+            <h3 class="text-center"> </h3>
+           <div class="row mt-30">
+              
+                    <div class="box9">
+                        <img src="img/12.jpg" style="border-right:4px solid #fff;">
+                        <div class="box-content">
+                            <h3 class="title">OTHER PRODUCT</h3>
+                            <ul class="icon">
+                                <li><a href="#" class="btn btn-primary">VISIT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+            <div class="col-md-3 col-sm-6" >
+                    <!-- <div class="container mt-40"> -->
+            <h3 class="text-center"> </h3>
+                      <div class="row mt-30">
+                    <div class="box15">
+                        <img src="img/12.jpg" alt="" style="border-right:4px solid #fff;">
+                        <div class="box-content">
+                            <h3 class="title">OTHER PRODUCT</h3><br><br>
+                            <ul class="icon">
+                               <li><a href="#" class="btn btn-primary">VISIT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+          </div>
+
+
+        <div class="col-md-3 col-sm-6">
+                    <!-- <div class="container mt-40"> -->
+            <h3 class="text-center"> </h3>
+           <div class="row mt-30">
+              
+                    <div class="box9">
+                        <img src="img/12.jpg">
+                        <div class="box-content">
+                            <h3 class="title">OTHER PRODUCT</h3>
+                            <ul class="icon">
+                                <li><a href="#" class="btn btn-primary">VISIT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+         </div>
+          </div>
+          <br>
+        </section>
+      
+
+
+    <footer class="site-footer"><hr>
+       
+     <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text" style="color: #000;">Powered & designed by  
+         <a href="#">SHYAKA Aimé</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/Magis-Let-105994257927054" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="dribbble" href="https://www.instagram.com/magis_let" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/magis_let" target="_blank"><i class="fa fa-twitter"></i></a></li>
+             
+            </ul>
+          </div>
+        </div>
+       </div>
+
+</footer>
+
+
+
+
+<!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+
+ <script>
+
+// Changing the defaults
+window.sr = ScrollReveal({ reset: true });
+
+// Customizing a reveal set
+sr.reveal('.specificat', {opacity: 0.4,duration:500});
+
+sr.reveal('.aboutt', {opacity:0,duration:2200});
+sr.reveal('.ser', {opacity: 0,duration:2000});
+sr.reveal('.typingh', {opacity: 0,duration:2000});
+sr.reveal('.attract', {opacity:0,duration:2300});
+sr.reveal('.spec_button', {opacity:0,duration:2000});
+sr.reveal('.fadeInUp', {opacity:0,duration:2000});
+sr.reveal('.custom_head', {opacity:0,duration:2300});
+sr.reveal('.spec_button', {opacity:0,duration:2000});
+
+</script>
+
+<script>
+$(document).ready(function(){
+  
+  
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["LOW PRICE", "HIGH QUALITY", "LOW POWER", "EFFICIENT"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+        contentType: 'html'
+    });
+
+    var typed = new Typed(".typing-2", {
+        strings: ["Student", "Developer", "Designer","Freelancer","problem solver"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+      
+    });
+
+});
+    </script> 
+
+
+    <script>
+  TweenLite.defaultEase = Linear.easeNone;
+var titles = document.querySelectorAll(".sectionTitle");
+var images = document.querySelectorAll(".zoom_section");
+/*const intro = document.querySelector(".intro");
+const video = intro.querySelector("video");
+const text = intro.querySelector("h1");
+//END SECTION
+const section = document.querySelector("section");
+const end = section.querySelector("h1");*/
+
+var controller = new ScrollMagic.Controller();
+var tl = new TimelineMax();
+
+// create timeline
+// this could also be created in a loop
+tl.to("#js-slideContainer", 1, {xPercent: -20}, "label1");
+tl.from(titles[1], 0.5, {opacity:0}, "label1+=0.5");
+tl.to("#js-slideContainer", 1, {xPercent: -40}, "label2");
+tl.from(titles[2], 0.5, {opacity:0}, "label2+=0.5");
+
+tl.to("#js-slideContainer", 1, {xPercent: -20}, "label1");
+tl.from(images[1], 0.5, {opacity:1}, "label1+=0.5");
+tl.to("#js-slideContainer", 1, {xPercent: -40}, "label2");
+tl.from(images[2], 0.5, {scale:0.3}, "label2+=0.5");
+
+
+
+new ScrollMagic.Scene({
+  triggerElement: "#js-wrapper",
+  triggerHook: "onLeave",
+  duration: "400%"
+})
+  .setPin("#js-wrapper")
+  .setTween(tl)
+  
+
+  .addTo(controller);
+/*
+  //Scenes
+let scene = new ScrollMagic.Scene({
+  duration: 9000,
+  triggerElement: intro,
+  triggerHook: 0
+})
+  .addIndicators()
+  .setPin(intro)
+  .addTo(controller);
+
+//Text Animation
+const textAnim = TweenMax.fromTo(text, 3, { opacity: 1 }, { opacity: 0 });
+
+let scene2 = new ScrollMagic.Scene({
+  duration: 9000,
+  triggerElement: intro,
+  triggerHook: 0
+})
+  .setTween(textAnim)
+  .addTo(controller);
+
+//Video Animation
+let accelamount = 0.1;
+let scrollpos =0;
+let delay = 0;
+
+scene.on("update", e => {
+  scrollpos = e.scrollPos / 1000;
+});
+
+setInterval(() => {
+  delay += (scrollpos - delay) * accelamount;
+  console.log(scrollpos, delay);
+
+  video.currentTime = delay;
+}, 33.3);*/
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"
+      integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"
+      integrity="sha256-31FC/OT6XpfjAhj9FuXjw5/wPXXawCAjJQ29E23/XPk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
